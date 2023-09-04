@@ -4,8 +4,8 @@ import { useState, useRef } from "react"
 import { Progress } from "./ui/progress"
 
 export default function FormImage() {
-    const [file, setFile] = useState<null | any>(null)
-    const inputRef = useRef()
+    const [file, setFile] = useState<any>(null)
+    const inputRef = useRef<any>()
     const [res, setRes] = useState<boolean>(false)
 
     const handleRes = () => {
@@ -28,7 +28,7 @@ export default function FormImage() {
     return (
         <form onSubmit={handleImage} className="flex flex-col w-full gap-5 p-2 border-2 rounded-sm">
             <label>Subir imagen</label>
-            <Input ref={inputRef} type="file" placeholder="subir imagen" onChange={e => { setFile(e.target.files[0]) }} />
+            <Input ref={inputRef} type="file" placeholder="subir imagen" onChange={(e: any) => { setFile(e.target.files[0]) }} />
             <button onClick={handleRes} type="submit">{res ? 'cargando...' : 'Enviar'}</button>
         </form>
     )
