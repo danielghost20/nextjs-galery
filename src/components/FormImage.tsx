@@ -19,10 +19,11 @@ export default function FormImage() {
             method: 'POST',
             body: formData
         })
-        const data = await response.json()
-        console.log(data)
-        inputRef.current.value = ''
-        window.location.reload()
+            .then((res) => {
+                inputRef.current.value = ''
+                window.location.reload()
+            })
+            .catch(err => console.log(err))
     }
 
     return (
