@@ -1,9 +1,9 @@
 'use client'
 import { Input } from "@/components/ui/input"
-import { useState, useRef } from "react"
-import { Progress } from "./ui/progress"
+import { useState, useRef, useEffect } from "react"
 
 export default function FormImage() {
+
     const [file, setFile] = useState<any>(null)
     const inputRef = useRef<any>()
     const [res, setRes] = useState<boolean>(false)
@@ -20,8 +20,10 @@ export default function FormImage() {
             body: formData
         })
             .then((res) => {
-                inputRef.current.value = ''
-                window.location.reload()
+                if (res.status === 200) {
+                    inputRef.current.value = ''
+                    window.location.reload()
+                }
             })
             .catch(err => console.log(err))
     }

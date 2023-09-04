@@ -2,6 +2,7 @@ import cloudinary from "cloudinary";
 import CloudinaryImage from "@/components/CloudinaryImage";
 
 export default async function Galery() {
+
     try {
         const { resources } = await cloudinary.v2.api.resources();
 
