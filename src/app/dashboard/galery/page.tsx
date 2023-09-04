@@ -5,7 +5,6 @@ export default async function Galery() {
 
     try {
         const { resources } = await cloudinary.v2.api.resources();
-
         return (
             <section className="w-full min-h-screen gap-3 px-2 columns-1 sm:columns-2 md:columns-3 lg:columns-4">
                 {resources.map((image: any) => (
