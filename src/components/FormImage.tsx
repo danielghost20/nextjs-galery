@@ -1,6 +1,6 @@
 'use client'
 import { Input } from "@/components/ui/input"
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 
 export default function FormImage() {
 
@@ -19,18 +19,13 @@ export default function FormImage() {
                 method: 'POST',
                 body: formData
             })
-                .then((res) => {
-                    if (res.status === 200) {
-                        inputRef.current.value = ''
-                        window.location.reload()
-                    }
-                })
-                .catch(err => console.log(err))
-
+            const data = await response.json()
+            if (data.status === 202) {
+                window.location.reload()
+            }
         } else {
             setFileError('porfavor sube un archivo')
             setRes(false)
-            return
         }
 
     }
