@@ -29,7 +29,7 @@ export async function POST (request: any) {
 
     return NextResponse.json({
         message: 'imagen subida',
-        status: 202,
+        status: 200,
         url: response.secure_url
     })
 }
