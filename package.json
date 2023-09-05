@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install" 
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.4",
@@ -23,6 +24,7 @@
     "class-variance-authority": "^0.7.0",
     "cloudinary": "^1.40.0",
     "clsx": "^2.0.0",
+    "commitizen": "^4.3.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "lucide-react": "^0.274.0",
@@ -39,5 +41,9 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.2.2",
     "vercel": "^32.1.0"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1"
   }
 }

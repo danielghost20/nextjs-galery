@@ -1,9 +1,12 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-export default function AvatarUser() {
+type ImageProps = {
+    image: string
+}
+export default function AvatarUser({ image }: ImageProps) {
     return (
         <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarImage src={image} />
             <AvatarFallback>CN</AvatarFallback>
         </Avatar>
     )

@@ -1,4 +1,4 @@
-export const config = { matcher: ["/dashboard/galery", "/dashboard"] }
+export const config = { matcher: ["/dashboard/galery", "/dashboard", "/dashboard/galery/update-image"] }
 import { withAuth } from "next-auth/middleware";
 import {  NextResponse } from "next/server";
 

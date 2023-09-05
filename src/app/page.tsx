@@ -1,5 +1,4 @@
 import Nabvar from "@/components/Nabvar";
-import { Button } from "@/components/ui/button";
 
 
 export default function Home() {
@@ -11,7 +10,7 @@ export default function Home() {
           Sube tus imagenes y manten <span className="text-red-500">espacio</span> libre en tu dispositivo
         </h1>
         <p className="max-w-3xl py-4 text-lg">Guarda tus imagenes y que mas te gustan y manten un control de estas mismas</p>
-        <Button>Registrate</Button>
+        <a className="px-4 py-3 font-medium rounded-md text-background bg-foreground">Ver mas proyectos</a>
       </header>
     </>
   );
