@@ -4,8 +4,10 @@ import { AiOutlineCloudUpload } from 'react-icons/ai'
 import UploadImages from "@/components/UploadImages";
 import Link from 'next/link';
 
+
+
 export default function UploadFormImage() {
-    const [image, setImage] = useState()
+    const [image, setImage] = useState<string | null>()
     return (
         <div className="w-full max-w-4xl border-2 flex items-center relative justify-center  h-[500px] rounded-md border-dashed">
             <div className='z-20 flex flex-col items-center gap-4 p-4 border-2 border-dotted rounded-md'>
