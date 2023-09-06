@@ -18,28 +18,22 @@ export default function UploadFormImage() {
             setLoader(true);
             const formData = new FormData();
             formData.append("file", file);
-            if (process.env.NEXT_PUBLIC_API_URL) {
-                const url = process.env.NEXT_PUBLIC_API_URL
-                await fetch(url, {
-                    method: "POST",
-                    body: formData,
+            await fetch('api/upload', {
+                method: "POST",
+                body: formData,
+            })
+                .then((res) => {
+                    if (res.status === 200) {
+                        console.log(res)
+                        setLoaderProgress(100),
+                            setLoader(false),
+                            alert("imagen subida"),
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 3000);
+                    }
                 })
-                    .then((res) => {
-                        console.log(process.env.NEXT_PUBLIC_API_URL)
-                        if (res.status === 200) {
-                            setLoaderProgress(100),
-                                setLoader(false),
-                                alert("imagen subida"),
-                                setTimeout(() => {
-                                    window.location.reload();
-                                }, 3000);
-                        }
-                    })
-                    .catch((err) => console.log("error en el servidor: ", err));
-            } else {
-                console.log('no se encontro la URL especifica en las variables de entorno')
-                console.log(process.env.NEXT_PUBLIC_API_URL)
-            }
+                .catch((err) => console.log("error en el servidor: ", err));
 
         } else {
             setError(true);
