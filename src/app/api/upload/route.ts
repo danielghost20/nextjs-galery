@@ -20,15 +20,20 @@ export async function POST (request: any) {
     const bytes = await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
 
-    // SAVE FILE
-    const filePath = path.join(process.cwd(), 'public', file.name)
-    await writeFile(filePath, buffer)
+   const result = await new Promise ((resolve, reject) => {
 
-    const response = await cloudinary.uploader.upload(filePath)
+     cloudinary.uploader.upload_stream({}, (err, result) => {
 
+      if (err) {
+        reject(err)
+      }
+      resolve(result)
+     }).end(buffer)
+   })
+
+   console.log(result)
     return NextResponse.json({
         message: 'imagen subida',
-        status: 200,
-        url: response.secure_url
+        status: 200
     })
 }
