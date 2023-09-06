@@ -38,6 +38,7 @@ export default function UploadFormImage() {
                     .catch((err) => console.log("error en el servidor: ", err));
             } else {
                 console.log('no se encontro la URL especifica en las variables de entorno')
+                console.log(process.env.NEXT_PUBLIC_API_URL)
             }
 
         } else {

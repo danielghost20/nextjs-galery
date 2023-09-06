@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { writeFile } from "fs/promises";
-import type { NextRequest } from "next/server";
 import path from 'path'
 import {v2 as cloudinary} from 'cloudinary';
           
