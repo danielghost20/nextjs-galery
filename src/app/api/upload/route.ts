@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import { writeFile } from "fs/promises";
-import path from 'path'
-import {v2 as cloudinary} from 'cloudinary';
+import {v2 as cloudinary, UploadApiResponse} from 'cloudinary';
+
           
 cloudinary.config({ 
   cloud_name: process.env.API_CLOUD_NAME, 
@@ -20,20 +19,19 @@ export async function POST (request: any) {
     const bytes = await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
 
-   const result = await new Promise ((resolve, reject) => {
-
+   const result: any = await new Promise ((resolve, reject) => {
      cloudinary.uploader.upload_stream({}, (err, result) => {
-
       if (err) {
         reject(err)
-      }
-      resolve(result)
+      } else {
+          resolve(result)
+        }
      }).end(buffer)
    })
 
-   console.log(result)
     return NextResponse.json({
         message: 'imagen subida',
-        status: 200
+        status: 200,
+        url : result.secure_url 
     })
 }
