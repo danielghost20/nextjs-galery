@@ -6,13 +6,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import Alert from "./Alert";
 
 export default function UploadFormImage() {
     const [file, setFile] = useState<File | null>();
     const [error, setError] = useState<boolean>();
     const [loader, setLoader] = useState<boolean>();
     const [loaderProgress, setLoaderProgress] = useState<number>(14);
-
+    const [showAlert, setShowAlert] = useState<boolean>(false)
     const router = useRouter();
 
     const handleImage = async (e: FormEvent<HTMLFormElement>) => {
@@ -33,6 +34,7 @@ export default function UploadFormImage() {
                 })
                 setLoaderProgress(100);
                 setTimeout(() => {
+                    setShowAlert(true)
                     setLoader(false);
                 }, 1500);
                 router.refresh();
@@ -46,11 +48,13 @@ export default function UploadFormImage() {
             onSubmit={handleImage}
             className="w-full max-w-4xl border-2 flex  items-center  justify-center p-4 h-[500px] rounded-md border-dashed"
         >
+            {showAlert ? <Alert setValue={setShowAlert} value={showAlert} /> : ''}
+
             <div className="flex flex-col items-center justify-center w-full max-w-lg gap-4 px-3 py-4 border-2 border-dotted">
                 {!loader ? (
                     <Input
                         placeholder="subir archivo"
-                        className="w-full duration-200 cursor-pointer text-center max-w-max hover:bg-foreground hover:text-background"
+                        className="w-full text-center duration-200 cursor-pointer max-w-max hover:bg-foreground hover:text-background"
                         type="file"
                         onChange={(e: ChangeEvent<HTMLInputElement>) => {
                             if (e.target.files && e.target.files[0]) {
@@ -88,7 +92,7 @@ export default function UploadFormImage() {
                 ) : (
                     ""
                 )}
-                {loader ? <Progress value={loaderProgress} /> : ""}
+                {loader ? <Progress className="duration-1000" value={loaderProgress} /> : ""}
             </div>
         </form>
     );
