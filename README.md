@@ -1,34 +1,131 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+---
+fileName: galery
+title: Next-Galery
+subtitle: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantium
+---
 
-## Getting Started
+# Galery App
+![galery-image](/images/galery/galery.webp)
 
-First, run the development server:
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantium, deleniti ullam adipisci reiciendis suscipit nihil. Corporis dolores ut suscipit, atque omnis odio!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
+## Herramientas de desarrollo
+ Frontend
+     NextJS
+     Typescript
+     Axios
+     TailwindCSS
+     chadcn
+
+* Backend
+	* Firebase
+
+* Servicio de nube
+	* Cloudinary
+
+## Tabla de contenido
+
+| Seccion              | Description                                 |
+| -------------------- | ------------------------------------------- |
+| Variables de entorno | Configuracion de las variables de entorno  |
+| Dependencas          | Instalacion de dependencias del proyecto    |
+
+## Inicio
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantium
+
+```
+pnpm install
+```
+## Configurar variables de entorno
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantiumLorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantium
+
+```
+CLOUDINARI API
+
+API_CLOUD_NAME
+API_CLOUD_KEY
+API_CLOUD_KEY_SECRET
+CLOUDINARY_URL=cloudinary
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+
+ NEXTAUTH CREDENTIALS (GOOGLE)
+
+GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_SECRET
+NEXTAUTH_URL
+NEXTAUTH_SECRET
+
+ NEXT URL UPLOAD
+
+NEXT_PUBLIC_API_URL=http://localhost:3000/api/upload
+
+ FIREBASE CREDENTIALS
+
+  API_KEY
+  AUTH_DOMAIN
+  PROYECJ_ID
+  STORAGE_BUCKED
+  MESSAGING_SENDER_ID
+  APP_ID
+  MEASUREMENT_ID
+```
+
+## Crear cuenta en cloudinary
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumend
+
+![cloudinary](/images/galery/cloudinary.webp)
+
+
+## Crear proyecto en firebase
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumend
+
+![firebase](/images/galery/firebase.webp)
+
+## Crear variables de entorno de next-auth
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantiumLorem ipsum
+
+![cloud](/images/galery/cloud.webp)
+
+## Correr proyecto
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantiumLorem ipsum
+
+```
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Navegacion y contenido
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantiumLorem ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantiumLorem ipsum
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Pantalla de inicio
 
-## Learn More
+![sreen-one](/images/galery/galery.webp)
 
-To learn more about Next.js, take a look at the following resources:
+dipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantiumLorem ipsum
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Pantalla de imagenes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![screen-tow](/images/galery/galery-images.webp)
 
-## Deploy on Vercel
+dipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantiumLorem ipsum
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Pantalla para subir una imagen
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![screen-three](/images/galery/upload-image.webp)
+
+dipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantiumLorem ipsum
+
+## Diagrama de flujo
+
+![diagram](/images/galery/diagram.webp)
+
+## Despliegue
+
+[NEXT-GALERY](https://nextjs-galery.vercel.app/)
+
+dipisicing elit. Eum aut consequatur voluptates illo assumenda laboriosam explicabo accusantiumLorem ipsum
